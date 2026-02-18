@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我的小博客</title>
+
+    <!-- 在这里我们会添加样式，稍后第二步加入 -->
+<head>
+    <meta charset="UTF-8">
+    <title>我的小博客</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: '微软雅黑', Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* 让内容居中，并设置最大宽度 */
+        body {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+        }
+        header h1 {
+            color: #2c3e50;
+        }
+
+        /* 导航样式 */
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+            background-color: #2c3e50;
+            border-radius: 5px;
+        }
+        nav ul li {
+            display: inline-block;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            display: inline-block;
+        }
+        nav ul li a:hover {
+            background-color: #34495e;
+            border-radius: 3px;
+        }
+
+        /* 使用网格布局：左边文章，右边侧边栏 */
+        main {
+            float: left;
+            width: 70%;
+            margin-right: 5%;
+        }
+        aside {
+            float: left;
+            width: 25%;
+            background-color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+        /* 清除浮动，防止页脚上浮 */
+        footer {
+            clear: both;
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        /* 文章样式 */
+        article {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        article h2 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 0.9em;
+        }
+        article a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        article a:hover {
+            text-decoration: underline;
+        }
+
+        /* 侧边栏样式 */
+        aside h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        aside ul {
+            padding-left: 20px;
+        }
+        aside li a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        aside li a:hover {
+            text-decoration: underline;
+        }
+/* 当前页面导航高亮 */
+nav ul li.active a {
+    background-color: #34495e;   /* 深色背景 */
+    border-radius: 3px;
+    font-weight: bold;
+    color: white;                /* 确保文字颜色 */
+}
+    </style>
+</head>
+</head>
+<body>
+    <!-- 博客头部：标题和简介 -->
+    <header>
+        <h1>我的个人博客</h1>
+        <p>记录生活、技术和思考</p>
+    </header>
+
+    <!-- 导航菜单：用于跳转到不同页面 -->
+ <nav>
+    <ul>
+        <li class="active"><a href="Budeo-seven.html">首页</a></li>
+        <li><a href="about.html">关于我</a></li>  
+        <li><a href="archive.html">归档</a></li>
+        <li><a href="contact.html">联系</a></li>
+    </ul>
+</nav>
+
+    <!-- 主要内容区域：这里放文章列表 -->
+    <main>
+        <!-- 第一篇文章 -->
+        <article>
+            <h2>我的第一篇博客文章</h2>
+            <p class="post-meta">发表于 2026年2月18日 | 分类：生活</p>
+            <p>今天我开始学习制作网页，并尝试把它变成一个博客。虽然现在还很简单，但我会慢慢丰富内容。欢迎常来！</p>
+            <p><a href="#">阅读更多</a></p>
+        </article>
+
+        <!-- 第二篇文章 -->
+        <article>
+            <h2>关于HTML的小笔记</h2>
+            <p class="post-meta">发表于 2026年2月17日 | 分类：技术</p>
+            <p>HTML是网页的骨架。今天学会了使用 header、nav、article 这些语义化标签，让结构更清晰。</p>
+            <p><a href="#">阅读更多</a></p>
+        </article>
+    </main>
+
+    <!-- 侧边栏：放置个人介绍、链接等 -->
+    <aside>
+        <h3>关于我</h3>
+        <p>你好！我是正在学习前端的新手，喜欢折腾代码。</p>
+        <h3>常用链接</h3>
+        <ul>
+            <li><a href="https://github.com/cdf54321" target="_blank">GitHub</a></li>
+            <li><a href="https://weibo.com" target="_blank">微博</a></li>
+        </ul>
+    </aside>
+
+    <!-- 页脚：版权信息 -->
+    <footer>
+        <p>&copy; 2026 我的小博客. 保留所有权利。</p>
+    </footer>
+</body>
+</html>
