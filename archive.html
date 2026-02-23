@@ -129,6 +129,24 @@ nav ul li.active a {
     font-weight: bold;
     color: white;                /* 确保文字颜色 */
 }
+body {
+        background-image: url('bp.png');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        /* 为了让文字更清晰，可以加一个半透明遮罩层（可选） */
+        position: relative;
+    }
+    body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0,0,0,0.3); /* 黑色半透明，让文字更突出 */
+        z-index: -1;
+    }
     </style>
 </head>
 </head>
@@ -167,7 +185,7 @@ nav ul li.active a {
         <h3>常用链接</h3>
         <ul>
             <li><a href="https://github.com/cdf54321" target="_blank">GitHub</a></li>
-
+            <li><a href="https://weibo.com" target="_blank">微博</a></li>
         </ul>
     </aside>
 
@@ -186,5 +204,4 @@ nav ul li.active a {
 
 </script>
 </body>
-
 </html>
