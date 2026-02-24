@@ -130,23 +130,32 @@ nav ul li.active a {
     color: white;                /* 确保文字颜色 */
 }
 body {
-        background-image: url('bp.png');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        /* 为了让文字更清晰，可以加一个半透明遮罩层（可选） */
-        position: relative;
-    }
-    body::before {
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0,0,0,0.3); /* 黑色半透明，让文字更突出 */
-        z-index: -1;
-    }
+    position: relative;  /* 让伪元素相对于 body 定位 */
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    /* 其他样式保持不变 */
+}
+
+body::before {
+    content: '';
+    position: fixed;  /* 覆盖整个视口 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(135deg, rgba(102, 126, 234, 0.6), rgba(118, 75, 162, 0.6));
+    /* 渐变色 + 透明度（0.6 表示 60% 不透明度） */
+    pointer-events: none;  /* 让鼠标可以穿透点击下面的内容 */
+    z-index: 1;  /* 确保渐变层在背景图之上，但在内容之下 */
+}
+
+/* 为了让文字在渐变层之上，需要给主体内容设置更高的 z-index */
+header, nav, main, aside, footer {
+    position: relative;
+    z-index: 2;
+}
     </style>
 </head>
 </head>
@@ -156,7 +165,28 @@ body {
         <h1>我的个人博客</h1>
         <p>记录生活、技术和思考</p>
     </header>
+<!-- 一个简单的播放按钮 -->
+<button id="playMusicBtn">🎵 播放背景音乐</button>
 
+<!-- 隐藏的 audio 元素 -->
+<audio id="bgMusic" src="bgm.mp3" loop></audio>
+
+<script>
+    const playButton = document.getElementById('playMusicBtn');
+    const audio = document.getElementById('bgMusic');
+
+    playButton.addEventListener('click', () => {
+        audio.play()
+            .then(() => {
+                playButton.textContent = '🎵 音乐播放中';
+                playButton.disabled = true;
+            })
+            .catch(error => {
+                console.log('播放失败:', error);
+                alert('无法播放音乐，请稍后重试。');
+            });
+    });
+</script>
     <!-- 导航菜单：用于跳转到不同页面 -->
  <nav>
     <ul>
@@ -174,7 +204,7 @@ body {
             <h2>我的第一篇博客文章</h2>
             <p class="post-meta">发表于 2026年2月18日 | 分类：生活</p>
             <p>今天我开始学习制作网页，并尝试把它变成一个博客。虽然现在还很简单，但我会慢慢丰富内容。欢迎常来！</p>
-            <p><a href="#">阅读更多</a></p>
+
         </article>
 
  
